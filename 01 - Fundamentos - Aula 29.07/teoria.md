@@ -1,6 +1,6 @@
 *Aula 29.07 sistemas distribuídos*
--Comunicação é bloqueante 
-  -quando um fala o outro escuta, mesmo funcionamento do oktok
+- Comunicação é bloqueante 
+  - quando um fala o outro escuta, mesmo funcionamento do oktok
 
 *Sistemas Distribuidos*
 - Heterogêneos: diferentes arquiteturas, so e linguagem
