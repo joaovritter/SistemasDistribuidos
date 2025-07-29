@@ -1,8 +1,8 @@
-*Aula 29.07 sistemas distribuídos*
+# Aula 29.07 sistemas distribuídos
 - Comunicação é bloqueante 
   - quando um fala o outro escuta, mesmo funcionamento do oktok
 
-*Sistemas Distribuidos*
+## Sistemas Distribuidos
 - Heterogêneos: diferentes arquiteturas, so e linguagem
 - Fracamente acoplados
   - distribuídos geograficamente via protocolos do modelo TCP/IP: endereço de rede, porta lógica, máscara de rede, protocolosde transporte)
@@ -41,7 +41,7 @@
     - importância: execução de processos concomitantemente. E em SD, para liberar comunicação bloqueante
 
 
-*Sistemas Paralelos*
+## Sistemas Paralelos
 -Homogêneos: arquitetura, SO e linguagem idênticas
 -Fortemente acoplados
   -fixo no mesmo lugar via tcp/ip: endereço da rede, porta lógica, máscara de rede, protocolos de transporte
