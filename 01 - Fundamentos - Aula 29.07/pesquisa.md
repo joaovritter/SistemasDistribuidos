@@ -1,4 +1,4 @@
-1- O que é um processo 
+* 1- O que é um processo *
   - é uma instância de um programa em execução;
   - possui sem próprio espaço de memória;
   - contém threads;
