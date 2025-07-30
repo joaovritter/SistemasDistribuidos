@@ -1,4 +1,4 @@
-# Aula 29.07 sistemas distribuídos
+# Fundamentos de Sistemas Distribuidos e Paralelos
 - Comunicação é bloqueante 
   - quando um fala o outro escuta, mesmo funcionamento do oktok
 - Concomitante não é ao mesmo tempo, diferença curta de tempo
