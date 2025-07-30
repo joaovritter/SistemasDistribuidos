@@ -10,6 +10,7 @@
   - o SO altera rapidamente entre todos processos (escalonamento);
   - um processo pode se comunicar com outro, mas somente através de mecanismos (socket, pipes, memória compartilhada).
 
+
 **2- O que é um thread**
   - é uma linha de execução;
   - representa um fluxo de execução dentro de um processo;
@@ -21,10 +22,12 @@
   - permite execução paralala (se houver vários núcleos de CPU);
   - termina quando conclui a tarefa.
 
+
 **3- Diferença entre processo e thread**
   - Processo tem recursos isolados X threads compartilham recursos do processo;
   - Memória própria X compartilham memória do processo;
   - comunicação mais lenta e complexa X mais rapida, compartilham o mesmo espaço de memória.
+
 
 **4-	Diferença entre ponto a ponto e cliente servidor**
   - Ponto a Ponto
@@ -34,6 +37,7 @@
     - escalabilidade;
     - tolerancia a falhas;
     - Ex: download no uTorrent, um usuário baixa uma parte, essa parte é enviada para outro usuário baixar, ele le e escreve
+      
   - Cliente Servidor
     - clientes solicitam recursos de um servidor centralizado;
     - servidor sempre ativo esperando conexões;
