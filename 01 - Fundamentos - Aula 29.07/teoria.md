@@ -1,6 +1,8 @@
 # Fundamentos de Sistemas Distribuidos e Paralelos
+- Comunicação é troca, baseado no TCP/IP
 - Comunicação é bloqueante 
   - quando um fala o outro escuta, mesmo funcionamento do oktok
+- Sincronismo para não haver interferência na comunicação
 - Concomitante não é ao mesmo tempo, diferença curta de tempo
 - Pararelo é ao mesmo tempo, no tempo 1 ocorre várias coisas
 
