@@ -1,4 +1,4 @@
-*1- O que é um processo*
+**1- O que é um processo**
   - é uma instância de um programa em execução;
   - possui sem próprio espaço de memória;
   - contém threads;
@@ -10,7 +10,7 @@
   - o SO altera rapidamente entre todos processos (escalonamento);
   - um processo pode se comunicar com outro, mas somente através de mecanismos (socket, pipes, memória compartilhada).
 
-2- O que é um thread
+**2- O que é um thread**
   - é uma linha de execução;
   - representa um fluxo de execução dentro de um processo;
   - um processo pode ter um ou vários threads;
@@ -21,12 +21,12 @@
   - permite execução paralala (se houver vários núcleos de CPU);
   - termina quando conclui a tarefa.
 
-2- Diferença entre processo e thread
+**3- Diferença entre processo e thread**
   - Processo tem recursos isolados X threads compartilham recursos do processo;
   - Memória própria X compartilham memória do processo;
   - comunicação mais lenta e complexa X mais rapida, compartilham o mesmo espaço de memória.
 
-3-	Diferença entre ponto a ponto e cliente servidor
+**4-	Diferença entre ponto a ponto e cliente servidor**
   - Ponto a Ponto
     - todos dispositivos podem ser clientes e servidores ao mesmo tempo;
     - cada ponta pode ler e escrever diretamente de outras pontas;
