@@ -1,4 +1,4 @@
-# 🧵 Threads com Memória Compartilhada
+# 🧵 Conceito Threads com Memória Compartilhada
 
 ## 🔹 O que são threads?
 - Fluxos de execução independentes dentro de um mesmo processo.
