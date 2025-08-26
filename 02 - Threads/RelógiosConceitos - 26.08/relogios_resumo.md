@@ -1,31 +1,31 @@
 # ⏱️ Relógios e Mecanismos em Sistemas Distribuídos
 
 ## ⏱️ Relógio Físico
-**O que é:** o relógio de hardware do computador (igual ao relógio do seu PC ou celular).  
+**O que é:** o relógio de hardware do computador (igual ao relógio do PC ou celular).  
 
 **Problema:** cada máquina tem o seu, e eles nunca batem exatamente iguais — alguns adiantam, outros atrasam.  
 
 **Exemplo prático:**  
-- Imagine duas pessoas combinando de se ligar às 15:00.  
+- Duas pessoas combinando de se ligar às 15:00.  
 - Uma está com o relógio adiantado 2 min e liga às 14:58, achando que já são 15:00.  
 - A outra ainda vê 14:58 no seu relógio.  
 - Esse desencontro causa confusão.  
 
-**Como corrigem:** usam protocolos de sincronização, como o **NTP (Network Time Protocol)** ou sinais de **GPS**. Eles ajustam os relógios, mas ainda existe um pequeno erro residual por conta de:
-- atraso de rede (tempo que a mensagem demora para ir até o servidor de horário);  
-- diferenças de hardware (cada cristal de relógio de CPU tem uma deriva própria).  
+**Como corrigem:** usam protocolos de sincronização, como o **NTP (Network Time Protocol)** ou sinais de **GPS**. Eles ajustam os relógios, mas ainda existe um pequeno erro por conta de:
+- atraso de rede (no tempo de transporte da mensangem);  
+- diferenças de hardware.  
 
 👉 Em sistemas distribuídos, isso significa que não dá para confiar 100% no tempo real para decidir a ordem de eventos.
 
 ---
 
 ## ⏳ Relógio Lógico
-**O que é:** um "sistema de contagem" para organizar eventos sem depender do horário real.  
+**O que é:** um sistema de contagem para organizar eventos sem depender do horário real.  
 
-**Objetivo:** responder à pergunta **“qual evento aconteceu antes do outro?”**  
+**Objetivo:** ele responde a pergunta: **“qual evento aconteceu antes do outro?”**  
 
 **Exemplo prático:**  
-- Em um grupo de WhatsApp, duas pessoas mandam mensagem quase ao mesmo tempo.  
+- duas pessoas mandam mensagem quase ao mesmo tempo num grupo do WhatsApp.  
 - O servidor precisa mostrar uma ordem: "Mensagem A antes da Mensagem B".  
 - Não importa se os celulares estão com horários diferentes; importa a ordem de chegada dos eventos.  
 
@@ -41,7 +41,7 @@
 - Cada processo guarda um vetor de contadores (um contador para cada processo).  
 - Assim, dá para saber não só se um evento veio antes, mas também se dois eventos são concorrentes (independentes).  
 
-👉 Mais informação, mais precisão.  
+👉 Com vetor = mais informação = mais precisão.  
 
 **Analogia:**  
 - Relógio físico = relógios de parede em casas diferentes (sempre com atraso/adianto).  
@@ -53,6 +53,9 @@
 **Problema:** vários processos querem acessar ao mesmo tempo um recurso compartilhado (ex: banco de dados, arquivo, impressora).  
 
 **Objetivo:** garantir que só um por vez use o recurso (evita conflito e corrupção de dados).  
+
+- Pyhton e C# utilizam lock
+- Java utiliza synchronized
 
 **Exemplos:**  
 - **Mutex (Mutual Exclusion Lock):** só uma thread/processo por vez pode segurar a "chave" (lock).  
@@ -67,17 +70,17 @@
 ## 👑 Eleição
 **Problema:** em sistemas distribuídos, muitas vezes é preciso um líder/coordenador (por exemplo, quem organiza as tarefas, resolve conflitos, etc.).  
 - Se o líder atual cai, é necessário escolher outro.  
-- Algoritmos de eleição fazem esse processo de forma distribuída, sem um "chefe fixo".  
+- Algoritmos de eleição fazem esse processo de forma distribuída, sem um chefe fixo. 
 
 **Exemplo: Algoritmo do Bully**  
-- Cada processo tem um "número de identificação".  
+- Cada processo tem um número de identificação.  
 - Se o líder cai, um processo dispara uma eleição.  
-- Ganha o processo com o maior ID (o “mais forte”, que “intimida” os outros).  
+- Ganha o processo com o maior ID (o mais forte).  
 - Ele se anuncia como novo líder.  
 
 👉 **Exemplo do mundo real:**  
-- Um grupo de amigos está organizando uma viagem.  
-- Se o amigo que estava liderando some do grupo, outro com mais "autoridade" assume e guia a organização.  
+- Um grupo de colegas está fazendo um trabalho.  
+- Se o colega que estava liderando some do grupo, outro com mais autoridade assume.  
 
 ---
 
