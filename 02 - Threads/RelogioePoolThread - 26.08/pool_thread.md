@@ -9,7 +9,7 @@
 
 ---
 
-** ⛏ Como funciona**
+**⛏ Como funciona**
 - Você cria um pool com N threads fixas ou configuráveis.
 - As tarefas são colocadas em uma fila (queue).
 - Cada thread do pool pega tarefas da fila e executa.
@@ -17,7 +17,7 @@
 
 ---
 
-** 🟢Vantagens**
+**🟢Vantagens**
 - Desempenho melhorado: evita custo de criar/destruir threads constantemente.
 - Controle de recursos: limita o número de threads rodando simultaneamente, evitando sobrecarga da CPU.
 - Gerenciamento centralizado: fácil controlar prioridade e execução das tarefas.
@@ -29,7 +29,7 @@
 - Complexidade extra se você precisa de tarefas com prioridades diferentes.
 - 
 ---
-**💉 Como se aplica**
+**💉Como se aplica**
 - Servidores web → cada requisição HTTP é tratada por uma thread do pool.
 - Processamento de filas → worker threads pegam tarefas da fila e processam.
 - Sistemas distribuídos → comunicação com múltiplos clientes sem criar threads constantemente.
