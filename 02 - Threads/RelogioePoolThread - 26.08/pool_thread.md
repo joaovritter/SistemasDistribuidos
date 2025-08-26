@@ -1,4 +1,4 @@
-#🧵 Thread Pool (Piscina de Threads)
+# 🚿 Thread Pool (Piscina de Threads)
 
 ---
 
