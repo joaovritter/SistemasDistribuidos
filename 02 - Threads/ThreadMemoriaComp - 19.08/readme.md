@@ -1,8 +1,8 @@
-# 🧵 Threads com Memória Compartilhada
+# 🧵 Conceito Threads com Memória Compartilhada
 
 ## 🔹 O que são threads?
-- Fluxos de execução independentes dentro de um mesmo processo.
-- Compartilham o **mesmo espaço de memória** e **recursos**.
+- Fluxo de execução independente dentro do mesmo processo.
+- Compartilham o **mesmo recurso**.
 
 ## 🔹 Memória Compartilhada
 - Todas as threads acessam a memória do processo principal.
@@ -16,8 +16,13 @@
 
 ## 🔹 Problemas
 - ⚠️ Condições de corrida (race conditions).
+    - Quando dois ou mais threads ou processos acessam e modificam simultaneamente um recurso compartilhado, resultando em comportamento inesperado ou erros devido à ordem imprevisível em que as operações são executadas.
 - ⚠️ Inconsistência de dados.
 - ⚠️ Deadlocks.
+  - quando duas ou mais threads ficam presas, cada uma esperando que a outra libere um recurso já mantido, impedindo que qualquer uma delas possa continuar.
+      - Exemplo: um cruzamento onde todos carros querem virar à esquerda, mas para isso precisa que o carro da frente libere o caminho
+      - Cada carro ocupa uma parte do cruzamento e espera que outro saia primeiro.
+      - Resultando em um deadlock onde não conseguem se mover e ficam bloqueados esperando indefinidamente.
 
 ## 🔹 Soluções (Sincronização)
 - 🔒 Mutex: exclusão mútua.
@@ -25,9 +30,20 @@
 - 📌 Monitores: bloqueio + espera.
 - 🕐 Variáveis de condição: espera por eventos.
 
+## 🔹 Threads sem x com Memória Compartilhada
+- Threads SEM memória compartilhada
+    - Cada thread recebe parâmetros próprios (ex.: números, strings, objetos independentes).
+    - As variáveis não são acessadas em comum.
+    - Mais fáceis de implementar, sem necessidade de sincronização.
+    - Menos propensas a condições de corrida.
+- Threads com memória compartilhada
+    - Duas ou mais threads acessam a mesma estrutura de dados (lista, dicionário, objeto).
+    - Necessário uso de mecanismos de sincronização (Java synchronized, C# lock, Python threading.Lock).
+    - Mais eficientes em alguns casos, MAS REQUEREM cuidado com concorrência (deadlocks, race conditions).
+
 ---
 
-## 🔹 Exemplo Reduzido em **Java**
+## 🔹 Exemplo em **Java**
 ```java
 class ListaCompartilhada {
     private final List<Integer> numeros = new ArrayList<>();
@@ -63,7 +79,7 @@ public class Principal {
 
 ---
 
-## 🔹 Exemplo Reduzido em **Python**
+## 🔹 Exemplo em **Python**
 ```python
 import threading, time
 
