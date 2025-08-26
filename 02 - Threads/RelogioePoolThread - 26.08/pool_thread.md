@@ -2,7 +2,8 @@
 
 ---
 
-**O que é:**Um Thread Pool é um conjunto de threads pré-criadas que ficam esperando para executar tarefas.
+**O que é:** 
+-Um Thread Pool é um conjunto de threads pré-criadas que ficam esperando para executar tarefas.
 
 - Em vez de criar e destruir threads o tempo todo (custoso!), você reaproveita threads já existentes.
 
