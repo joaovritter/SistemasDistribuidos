@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/02 - Threads/02 - Threads.iml" filepath="$PROJECT_DIR$/02 - Threads/02 - Threads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02 - Threads/NomeandoThread - 12.08/NomeandoThread - 12.08.iml" filepath="$PROJECT_DIR$/02 - Threads/NomeandoThread - 12.08/NomeandoThread - 12.08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02 - Threads/ThreadMemoriaComp - 19.08/ThreadMemoriaComp - 19.08.iml" filepath="$PROJECT_DIR$/02 - Threads/ThreadMemoriaComp - 19.08/ThreadMemoriaComp - 19.08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sistemasDistribuidos - João.iml" filepath="$PROJECT_DIR$/.idea/sistemasDistribuidos - João.iml" />
+    </modules>
+  </component>
+</project>
