@@ -1,0 +1,42 @@
+Aqui está, formatado como um bloco de código Markdown (útil para colar em fóruns ou Gists):
+
+Markdown
+
+## 🚀 Melhorias no Sistema de Chat: Da Conversa Pública para a Privada
+
+O código original do chat multicast foi significativamente aprimorado para evoluir de um simples "salão" de conversa pública para um sistema de comunicação robusto, capaz de gerenciar **mensagens privadas (Unicast)** e **públicas (Multicast)** de forma inteligente.
+
+As principais modificações introduziram um **protocolo de presença P2P (Peer-to-Peer)**, permitindo que cada cliente tenha consciência de quem está online e possa direcionar mensagens a eles.
+
+Aqui estão os pilares centrais da atualização:
+
+### 1. Implementação de Mensagens Privadas (Unicast)
+
+O objetivo principal foi permitir que um usuário enviasse uma mensagem para **apenas uma pessoa** do grupo, em vez de para todas.
+
+* A lógica de envio (no método `enviarMsg`) agora é "inteligente":
+    * **Se nenhum usuário estiver selecionado** na lista, a mensagem é enviada para o **IP do Grupo** (comportamento Multicast, público).
+    * **Se um usuário for selecionado**, a mensagem é enviada diretamente para o **IP individual** daquele usuário (comportamento Unicast, privado).
+
+### 2. Criação de um Protocolo de Presença (Descoberta P2P)
+
+Para que as mensagens privadas fossem possíveis, os clientes precisavam de uma forma de se "descobrirem". Criamos um protocolo simples sobre o UDP:
+
+* **`JOIN:Nick`**: Quando um usuário se conecta, ele envia uma mensagem **Multicast** para o grupo, anunciando sua chegada.
+* **`PRESENT:Nick`**: Os usuários que já estão no chat (e recebem o `JOIN`) respondem com uma mensagem **Unicast** (diretamente para o IP de quem acabou de entrar), dizendo "Estou aqui!".
+* **`LEAVE:Nick`**: Quando um usuário clica em "Sair", ele envia uma mensagem **Multicast** para o grupo, avisando que está saindo.
+
+### 3. Mapeamento de Usuários (Nick para IP)
+
+A "mágica" que conecta tudo é uma nova estrutura de dados:
+
+* `HashMap<String, InetAddress> mapaUsuarios;`
+
+Esta é a "lista de contatos" do chat. Quando uma mensagem `JOIN` ou `PRESENT` é recebida, o programa extrai o **Nick** do remetente (da mensagem) e o **IP** do remetente (do `DatagramPacket`) e os armazena no mapa.
+
+Isso permite que, ao selecionar um "Nick" na lista, o programa saiba exatamente para qual "IP" enviar a mensagem privada.
+
+### 4. Lógica de Recebimento e GUI Dinâmica
+
+* A `ThreadReceptora` foi a peça mais modificada. Ela deixou de ser um simples receptor de texto e se tornou um **processador de protocolo**. Ela agora inspeciona cada pacote, identifica se é `JOIN`, `LEAVE`, `PRESENT` ou um chat normal, e toma as ações necessárias.
+* A `JList` de usuários (`jList1`) agora é controlada por um `DefaultListModel`, permitindo que usuá
